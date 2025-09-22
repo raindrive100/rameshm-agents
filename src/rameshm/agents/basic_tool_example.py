@@ -128,6 +128,7 @@ def gr_chat_handler(user_question: str, chat_history: list[dict[str, str]]) -> T
     try:
         if not file_contents:
             raise ValueError("No document content available. Please upload a PDF document first.")
+        # Build the messages for the chat completion
         if len(chat_history) == 0:
             # First message, include system prompt and document content
             logger.debug("FIRST MESSAGE")
@@ -202,12 +203,11 @@ with gr.Blocks() as demo:
     gr.Markdown(
         """
         # Basic Tool Example with Chat Models
-        This example demonstrates the use of tools with chat models. No agents are used in this example.
-        It also shows structured output using Pydantic models.
+        This example shows how chat models use tools without agents and return structured output via Pydantic models:
         - Upload a PDF document.
-        - Ask questions based on the document content.
-        - If the model doesn't know the answer, it will invoke a tool to record the unanswered question.
-        - If the model answers the question, it will invoke a tool to record the user question and AI answer.
+        - Ask questions about its content.
+        - If the model doesn't know the answer, the model logs it using a tool.
+        - If the model knows the answer, answer is displayed in the chat.
         """
     )
     with gr.Row():
