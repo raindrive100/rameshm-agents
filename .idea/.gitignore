@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+#Ignore copilot files by RRM
+copilot.data*
+#Ignore below files as well by RRM
+misc.xml
+rameshm-agents.iml
+profiles_settings.xml
