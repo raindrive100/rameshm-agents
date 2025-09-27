@@ -5,10 +5,19 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "display>=1.0.0",
     "gradio>=5.46.0",
     "ipykernel>=6.30.1",
     "mcp>=1.14.1",
+    "node>=1.2.2",
     "openai>=1.108.0",
     "openai-agents>=0.3.1",
     "pypdf>=6.0.0",
 ]
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+# Tells setuptools (and tools that respect it) where to find packages
+# and that the root of your source code is inside the 'src' directory.
+where = ["src"]
