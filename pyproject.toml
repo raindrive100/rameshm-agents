@@ -13,6 +13,7 @@ dependencies = [
     "openai>=1.108.0",
     "openai-agents>=0.3.1",
     "pypdf>=6.0.0",
+    "pytest>=8.4.2",
 ]
 [build-system]
 requires = ["setuptools>=61.0"]
