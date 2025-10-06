@@ -10,6 +10,7 @@ __pycache__/
 6_mcp/
 node_modules/
 scratch*
+*egg-info/
 .env
 .venv
 test/
