@@ -1,7 +1,7 @@
 from agents import Agent, ModelSettings, Runner, trace, input_guardrail, GuardrailFunctionOutput
 from pydantic import BaseModel, Field
 import os
-from typing import Any
+from typing import Any, Callable
 from rameshm.agents.utils import basic_setup as rrm_setup
 
 logger = rrm_setup.get_basic_logger()
@@ -39,13 +39,13 @@ class BasicInputGuardrail():
         )
         return input_guardrail_agent
 
-    def create_improper_query_guardrail(self) -> GuardrailFunctionOutput:
-        """ Returns a guard rail funtion that the calling agents can use """
+    def create_improper_query_guardrail(self):  # Deliberately no type hinting for return type
+        """ Returns a guard rail function that the calling agents can use """
         @input_guardrail
         async def improper_user_query_guardrail(ctx, agent, message: str) -> GuardrailFunctionOutput:
-            # Check if any unprofessions words are used in the query
+            # Check if any unprofessional words are used in the query
             # We can add more checks like: Checking for message length, any PI data etc..
-            result = await Runner.run(self.agent, input=message, context=ctx)
+            result = await Runner.run(self.agent, input=message, context=ctx.context)
             logger.debug(result.final_output)
             if result.final_output.is_appropriate:
                 reason = "Input is appropriate"
