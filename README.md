@@ -1,6 +1,6 @@
 # rameshm-agents
 
-This repository contains modules for implementing Autonomous Agents using OpenAI Agents Development kit.
+This repository contains modules for implementing Autonomous Agents using OpenAI Agents SDK.
 
 ---
 
