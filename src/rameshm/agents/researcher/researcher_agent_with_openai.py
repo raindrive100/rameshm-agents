@@ -129,9 +129,9 @@ if __name__ == "__main__":
     # print(dir(result))
     # print(f"Last Agent: {result.last_agent}")
     # print(f"Agent Input: {result.input}")
-    #print(result.final_output)
+    print(result.final_output)
     #Write to file
-    result_file_nm = "/home/ramesh/tmp/researcher.md"
-    with open(result_file_nm, mode="w") as f:
-        f.write(result.final_output)
+    #result_file_nm = "/home/ramesh/tmp/researcher.md"
+    #with open(result_file_nm, mode="w") as f:
+    #    f.write(result.final_output)
 
