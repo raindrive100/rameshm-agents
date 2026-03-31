@@ -15,6 +15,7 @@ scratch*
 .venv
 test/
 *copilot.data*
+.idea/
 
 # C extensions
 *.so
